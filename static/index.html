@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shiprr Learning Panel</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#172238;--line:#283550;--text:#edf3ff;--muted:#9aa9c4;--accent:#72e0bd;--blue:#8ab4ff;--red:#ff9d9d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% -20%,#1e3150 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+.shell{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.side{border-right:1px solid var(--line);padding:25px 17px;background:#0b1120}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;margin:0 8px 30px}.logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#72e0bd,#8ab4ff);color:#09131d;display:grid;place-items:center;font-weight:900}.eyebrow{font-size:11px;color:#7485a4;text-transform:uppercase;letter-spacing:1.5px;margin:24px 10px 9px}.nav{display:flex;gap:12px;align-items:center;padding:11px 12px;margin:4px 0;border-radius:10px;color:var(--muted)}.nav.active{background:#1a2940;color:var(--accent);border:1px solid #2a4655}.nav span{width:20px;text-align:center}.side-note{margin:40px 4px 0;padding:14px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:12px}.main{padding:30px clamp(18px,4vw,48px);max-width:1500px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.crumb{color:var(--muted);font-size:13px}.top-right{display:flex;gap:10px;align-items:center}.pill{font-size:12px;border:1px solid #355349;color:var(--accent);border-radius:99px;padding:6px 10px;background:#10251f}.avatar{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:#283954;color:var(--blue);font-weight:700}h1{font-size:clamp(26px,3vw,36px);letter-spacing:-1px;margin:20px 0 5px}.sub{color:var(--muted);margin:0 0 25px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.card{background:linear-gradient(145deg,#141e33,#101829);border:1px solid var(--line);border-radius:16px;padding:19px;min-width:0}.metric-label{font-size:13px;color:var(--muted)}.metric{font-size:29px;font-weight:750;margin:10px 0 2px}.metric-foot{font-size:12px;color:var(--accent)}.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:16px;margin-top:17px}.card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.card h2{font-size:16px;margin:0}.small{font-size:12px;color:var(--muted)}button{border:0;border-radius:9px;background:var(--accent);color:#071710;padding:10px 13px;font-weight:750;cursor:pointer}button.secondary{background:#202e47;color:var(--text);border:1px solid #344664}button.tiny{padding:6px 9px;font-size:12px}button:hover{filter:brightness(1.08)}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}th{font-size:11px;color:#8393b1;text-transform:uppercase;letter-spacing:.8px;font-weight:600}td,th{padding:13px 10px;border-bottom:1px solid #253149}td{font-size:13px}td .name{font-weight:650}td .email{font-size:12px;color:var(--muted)}.status{display:inline-block;border-radius:99px;padding:4px 8px;font-size:11px}.status.Active{color:var(--accent);background:#123127}.status.Paused{color:#ffcb86;background:#352a1c}.activity{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #253149}.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:7px;flex:none}.dot.info{background:var(--blue)}.activity p{margin:0;font-size:13px}.activity small{color:var(--muted)}.form{display:grid;gap:10px;margin-top:16px}.form input,.form select{width:100%;background:#0d1526;border:1px solid #34435e;border-radius:9px;padding:11px;color:var(--text);font:inherit}.form label{font-size:12px;color:var(--muted)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.notice{margin-top:17px;border:1px solid #594a2b;background:#261f16;color:#f2d9a4;padding:13px 15px;border-radius:12px;font-size:12px}.footer{color:#6f809f;font-size:12px;margin:24px 0 5px}.toast{position:fixed;bottom:18px;right:18px;background:#e6fff5;color:#0b3025;border-radius:10px;padding:12px 16px;display:none;box-shadow:0 10px 35px #0008;max-width:90vw}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:1fr}}@media(max-width:650px){.shell{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line);padding:13px 15px}.brand{margin:0}.navs,.eyebrow,.side-note{display:none}.main{padding:20px 14px}.grid{gap:9px}.card{padding:14px}.metric{font-size:24px}.form-row{grid-template-columns:1fr}.top{align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <div class="brand"><div class="logo">SL</div><div>Shiprr<span style="color:var(--accent)">Learn</span></div></div>
+  <div class="eyebrow">Workspace</div>
+  <div class="nav active"><span>▦</span> Overview</div>
+  <div class="nav"><span>♙</span> Demo accounts</div>
+  <div class="nav"><span>⌁</span> Service status</div>
+  <div class="nav"><span>⚙</span> Settings</div>
+  <div class="eyebrow">Resources</div>
+  <div class="nav"><span>⌘</span> API endpoints</div>
+  <div class="side-note"><b style="color:var(--text)">Learning mode</b><br><br>This dashboard uses sample data only. No external servers or real accounts are connected.</div>
+</aside>
+<main class="main">
+  <div class="top"><div class="crumb">Workspace / <span style="color:var(--text)">Overview</span></div><div class="top-right"><span class="pill">● Demo environment</span><div class="avatar">L</div></div></div>
+  <h1>Good to see you.</h1><p class="sub">A compact admin dashboard built for learning source-based deployment.</p>
+  <section class="grid">
+    <div class="card"><div class="metric-label">Demo accounts</div><div class="metric" id="mUsers">—</div><div class="metric-foot">↗ Sample records</div></div>
+    <div class="card"><div class="metric-label">Active</div><div class="metric" id="mActive">—</div><div class="metric-foot">● Enabled in demo</div></div>
+    <div class="card"><div class="metric-label">Paused</div><div class="metric" id="mPaused">—</div><div class="metric-foot" style="color:#ffcb86">● Inactive in demo</div></div>
+    <div class="card"><div class="metric-label">App health</div><div class="metric">Online</div><div class="metric-foot"><span id="healthText">Checking API…</span></div></div>
+  </section>
+  <section class="layout">
+    <div class="card">
+      <div class="card-head"><div><h2>Demo accounts</h2><div class="small">Add a sample record or pause/resume it</div></div><button id="refreshBtn" class="secondary">↻ Refresh</button></div>
+      <div class="table-wrap"><table><thead><tr><th>Account</th><th>Plan</th><th>Status</th><th>Action</th></tr></thead><tbody id="usersBody"><tr><td colspan="4">Loading…</td></tr></tbody></table></div>
+      <form id="addForm" class="form">
+        <div class="card-head" style="margin:12px 0 0"><h2>Add demo account</h2><span class="small">Stored in memory</span></div>
+        <div class="form-row"><div><label for="name">Name</label><input id="name" required minlength="2" maxlength="60" placeholder="Example User"></div><div><label for="email">Email</label><input id="email" type="email" required placeholder="user@example.com"></div></div>
+        <div class="form-row"><div><label for="plan">Plan</label><select id="plan"><option>Starter</option><option>Trial</option><option>Standard</option></select></div><div style="display:flex;align-items:end"><button type="submit" style="width:100%">＋ Add account</button></div></div>
+      </form>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h2>Recent activity</h2><div class="small">Example events from the app</div></div><span class="pill">Live API</span></div>
+      <div id="activityList"><div class="activity"><span class="dot"></span><div><p>Loading activity…</p></div></div></div>
+      <div class="notice"><b>Demo data only</b><br>This learning project has no authentication and does not store data permanently. Do not add real personal information.</div>
+      <div style="margin-top:18px"><h2 style="margin-bottom:8px">Quick links</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="secondary tiny" onclick="window.open('/docs','_blank')">API docs ↗</button><button class="secondary tiny" onclick="window.open('/health','_blank')">Health check ↗</button></div></div>
+    </div>
+  </section>
+  <div class="footer">ShiprrLearn · FastAPI · Source deployment · Educational demo</div>
+</main>
+</div><div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+function toast(msg){$('toast').textContent=msg;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2600)}
+async function api(url,opts={}){const r=await fetch(url,{headers:{'Content-Type':'application/json'},...opts});let data={};try{data=await r.json()}catch{}if(!r.ok)throw new Error(data.detail||'Request failed');return data}
+async function load(){
+ try{
+  const [s,users,acts]=await Promise.all([api('/api/summary'),api('/api/users'),api('/api/activity')]);
+  $('mUsers').textContent=s.users;$('mActive').textContent=s.active;$('mPaused').textContent=s.paused;
+  $('healthText').textContent='API reachable';$('healthText').style.color='var(--accent)';
+  $('usersBody').innerHTML=users.map(u=>`<tr><td><div class="name">${esc(u.name)}</div><div class="email">${esc(u.email)}</div></td><td>${esc(u.plan)}</td><td><span class="status ${u.status}">${u.status}</span></td><td><button class="secondary tiny" onclick="toggle(${u.id})">${u.status==='Active'?'Pause':'Resume'}</button></td></tr>`).join('')||'<tr><td colspan="4">No demo accounts yet.</td></tr>';
+  $('activityList').innerHTML=acts.map(a=>`<div class="activity"><span class="dot ${a.kind==='info'?'info':''}"></span><div><p>${esc(a.event)}</p><small>${esc(a.time)}</small></div></div>`).join('');
+ }catch(e){$('healthText').textContent='API unavailable';$('healthText').style.color='var(--red)';toast(e.message)}
+}
+function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function toggle(id){try{await api(`/api/users/${id}/toggle`,{method:'PATCH'});await load();toast('Demo account updated')}catch(e){toast(e.message)}}
+$('addForm').addEventListener('submit',async e=>{e.preventDefault();try{await api('/api/users',{method:'POST',body:JSON.stringify({name:$('name').value,email:$('email').value,plan:$('plan').value})});$('addForm').reset();await load();toast('Demo account added')}catch(err){toast(err.message)}});
+$('refreshBtn').addEventListener('click',load);load();
+</script>
+</body></html>
